@@ -1,0 +1,11 @@
+@use 'var' as *;
+@use 'mixins' as *;
+
+.flex {
+  display: flex;
+}
+
+/* autoprefixer grid: autoplace */
+.grid {
+  display: grid;
+}

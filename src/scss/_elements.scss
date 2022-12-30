@@ -1,0 +1,28 @@
+@use 'var' as *;
+@use 'mixins' as *;
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // < 768px
+  font-size: calc(100vw / 375 * 10);
+  // 768px < 1024px
+  // 1280:10 = 768:x
+  // =7680/1280
+  @include md {
+    font-size: calc(100vw / 768 * 6);
+  }
+  // 1024px =<
+  @include lg {
+    font-size: 62.5%;
+  }
+
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.6em;
+}
