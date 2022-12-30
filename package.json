@@ -1,0 +1,33 @@
+{
+  "name": "ejs-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ejs": "ejs-cli -b src/ -f '!(_)*.ejs' -o ./dist/",
+    "sass:watch": "sass --watch src/scss:dist/css",
+    "sass": "sass src/scss:dist/css",
+    "postcss": "postcss -c ./postcss.config.js dist/css/style.css --use autoprefixer --replace",
+    "build": "npm run ejs && npm run sass && npm run postcss",
+    "serve": "browser-sync start --config bs-config.js",
+    "start": "npm run watch & npm run sass:watch & npm run serve",
+    "watch": "onchange -v 'src/**/*.ejs' -- npm run ejs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
+    "ejs-cli": "^2.2.3",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "sanitize.css": "^13.0.0",
+    "swiper": "^8.4.5"
+  }
+}
